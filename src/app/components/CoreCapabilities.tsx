@@ -61,6 +61,19 @@ export function CoreCapabilities() {
 
   const capabilitiesRow1: CapabilityDetail[] = [
     {
+      icon: Stethoscope,
+      label: 'MDS Consulting',
+      color: '#A9C25D',
+      headline: 'Solve the right problems first',
+      body: 'We step in when things feel unclear or stuck. Whether it\'s growth, operations, or direction, we help you cut through noise and focus on what actually matters. No generic frameworks. Just practical thinking tailored to your business.',
+      bullets: [
+        'Business diagnostics and gap analysis',
+        'Leadership alignment and decision support',
+        'Growth bottleneck identification',
+        'Clear execution roadmaps',
+      ],
+    },
+    {
       icon: Users,
       label: 'Department of Health & Services',
       color: '#2F4F3E',
@@ -97,19 +110,6 @@ export function CoreCapabilities() {
         'Real-Time Cross-Program Analytics',
         'Public Health Surveillance Systems',
         'Immunization & Vital Records Support',
-      ],
-    },
-    {
-      icon: Stethoscope,
-      label: 'MDS Consulting',
-      color: '#A9C25D',
-      headline: 'Solve the right problems first',
-      body: 'We step in when things feel unclear or stuck. Whether it\'s growth, operations, or direction, we help you cut through noise and focus on what actually matters. No generic frameworks. Just practical thinking tailored to your business.',
-      bullets: [
-        'Business diagnostics and gap analysis',
-        'Leadership alignment and decision support',
-        'Growth bottleneck identification',
-        'Clear execution roadmaps',
       ],
     },
   ];
