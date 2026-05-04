@@ -1,7 +1,7 @@
 
   # ICC
 
-  This is a code bundle for ICC. The original project is available at https://www.figma.com/design/8g5XdeHrjYYaZt09783kuR/ICC.
+  This is a code bundle for ICC. The original project is available at https://icc-consulting-tau.vercel.app/
 
   ## Running the code
 
