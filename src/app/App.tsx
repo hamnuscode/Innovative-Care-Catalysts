@@ -36,7 +36,7 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <LogoSlider />
+      {/* <LogoSlider /> */}
       <OurFocus />
       <FirmOverview />
       <StateFootprint />
