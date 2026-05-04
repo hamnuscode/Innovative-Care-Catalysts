@@ -61,21 +61,8 @@ export function CoreCapabilities() {
 
   const capabilitiesRow1: CapabilityDetail[] = [
     {
-      icon: Stethoscope,
-      label: 'MDS Consulting',
-      color: '#A9C25D',
-      headline: 'Solve the right problems first',
-      body: 'We step in when things feel unclear or stuck. Whether it\'s growth, operations, or direction, we help you cut through noise and focus on what actually matters. No generic frameworks. Just practical thinking tailored to your business.',
-      bullets: [
-        'Business diagnostics and gap analysis',
-        'Leadership alignment and decision support',
-        'Growth bottleneck identification',
-        'Clear execution roadmaps',
-      ],
-    },
-    {
       icon: Users,
-      label: 'DHS Health and Services',
+      label: 'Department of Health & Services',
       color: '#2F4F3E',
       headline: 'Accelerating ERP Modernization',
       body: 'We drive complex digital transformations for Human Services, bridging the gap between legacy infrastructure and modern application development through rigorous analysis and agile execution.',
@@ -87,8 +74,21 @@ export function CoreCapabilities() {
       ],
     },
     {
+      icon: Target,
+      label: 'Department of Transportation',
+      color: '#2F4F3E',
+      headline: 'To modernise their systems',
+      body: 'Helping transportation departments leverage modern technology to improve efficiency, safety, and infrastructure management.',
+      bullets: [
+        'Infrastructure tech advisory',
+        'Modernized traffic management',
+        'Data-informed logistics',
+        'To modernise their systems',
+      ],
+    },
+    {
       icon: Database,
-      label: 'DOH Data Modernization',
+      label: 'Data Modernization',
       color: '#A9C25D',
       headline: 'Strategic Data Transformation',
       body: 'As a strategic delivery partner for the Department of Health, we spearhead the transition of Enterprise Data Warehousing to Azure cloud, enabling real-time intelligence for public health decision-makers.',
@@ -100,16 +100,16 @@ export function CoreCapabilities() {
       ],
     },
     {
-      icon: Target,
-      label: 'DOT Dept of Transportation',
-      color: '#2F4F3E',
-      headline: 'To modernise their systems',
-      body: 'Helping transportation departments leverage modern technology to improve efficiency, safety, and infrastructure management.',
+      icon: Stethoscope,
+      label: 'MDS Consulting',
+      color: '#A9C25D',
+      headline: 'Solve the right problems first',
+      body: 'We step in when things feel unclear or stuck. Whether it\'s growth, operations, or direction, we help you cut through noise and focus on what actually matters. No generic frameworks. Just practical thinking tailored to your business.',
       bullets: [
-        'Infrastructure tech advisory',
-        'Modernized traffic management',
-        'Data-informed logistics',
-        'To modernise their systems',
+        'Business diagnostics and gap analysis',
+        'Leadership alignment and decision support',
+        'Growth bottleneck identification',
+        'Clear execution roadmaps',
       ],
     },
   ];
