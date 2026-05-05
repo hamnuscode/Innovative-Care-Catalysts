@@ -9,12 +9,14 @@ import {
   Briefcase,
   Info,
   Mail,
+  Users,
 } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "/", id: "home", icon: Home },
   { name: "Services", href: "/#services", id: "services", icon: Briefcase },
   { name: "About", href: "/#about", id: "about", icon: Info },
+  { name: "Clients", href: "/#clients", id: "clients", icon: Users },
   { name: "Contact", href: "/contact", id: "contact", icon: Mail },
 ];
 
@@ -53,9 +55,8 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${
-          isScrolled ? "w-full max-w-sm" : "w-full max-w-7xl"
-        }`}
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${isScrolled ? "w-full max-w-sm" : "w-full max-w-7xl"
+          }`}
       >
         <motion.div
           animate={{
@@ -89,7 +90,7 @@ export function Navbar() {
                   <img
                     src={image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4}
                     alt="Innovative Care Catalysts"
-                    className="h-[160px]"
+                    className="h-[120px]"
                   />
                 </button>
               </motion.div>

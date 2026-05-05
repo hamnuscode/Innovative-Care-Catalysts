@@ -7,8 +7,9 @@ const statesData = [
     name: 'Pennsylvania',
     clients: [
       { name: 'MDS Consulting', detail: 'Tailored business diagnostics, leadership alignment, and actionable execution roadmaps.' },
-      { name: 'DHS ERP Modernization', detail: 'Full-cycle analysis, PI planning, and RTM management for high-stakes systems.' },
-      { name: 'DOT Systems Modernization', detail: 'Infrastructure tech advisory, traffic management systems, and data-informed logistics.' },
+      { name: 'Department of Health & Human Services', detail: 'Full-cycle analysis, PI planning, and RTM management for high-stakes systems.' },
+      { name: 'Department of Transport', detail: 'Infrastructure tech advisory, traffic management systems, and data-informed logistics.' },
+      { name: 'Department of Health', detail: 'Strategic consulting and system modernization for public health initiatives.' },
     ]
   },
   {
@@ -29,7 +30,7 @@ export const StateFootprint = () => {
   const activeData = statesData.find(s => s.abbr === activeState);
 
   return (
-    <section className="py-24 bg-[#F8FAF9] border-t border-[#2F4F3E]/5 relative z-20">
+    <section id="clients" className="py-24 bg-[#F8FAF9] border-t border-[#2F4F3E]/5 relative z-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -126,17 +127,6 @@ export const StateFootprint = () => {
             )}
           </AnimatePresence>
         </div>
-
-        {/* Informational Subtext */}
-        {!activeState && (
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-center text-sm text-[#2F4F3E]/50 font-medium"
-          >
-            Click on a state to explore our regional impact and partnerships
-          </motion.p>
-        )}
       </div>
     </section>
   );
