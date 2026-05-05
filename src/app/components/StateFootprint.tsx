@@ -90,7 +90,6 @@ export const StateFootprint = () => {
                   <div className="p-8 md:p-12">
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 pb-8 border-b border-[#2F4F3E]/10">
                       <div>
-                        <span className="text-[#A9C25D] font-bold tracking-[0.2em] uppercase text-[10px] mb-2 block">Case Study</span>
                         <h3 className="text-2xl md:text-3xl font-bold text-[#2F4F3E]" style={{ fontFamily: 'var(--font-heading)' }}>
                           {activeData.name} Impact
                         </h3>
