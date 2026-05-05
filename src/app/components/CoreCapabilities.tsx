@@ -59,7 +59,7 @@ export function CoreCapabilities() {
     }
   }, [hoveredIndex]);
 
-  const capabilitiesRow1: CapabilityDetail[] = [
+  const capabilities: CapabilityDetail[] = [
     {
       icon: Stethoscope,
       label: 'MDS Consulting',
@@ -74,35 +74,9 @@ export function CoreCapabilities() {
       ],
     },
     {
-      icon: Users,
-      label: 'Department of Health & Services',
-      color: '#2F4F3E',
-      headline: 'Accelerating ERP Modernization',
-      body: 'We drive complex digital transformations for Human Services, bridging the gap between legacy infrastructure and modern application development through rigorous analysis and agile execution.',
-      bullets: [
-        'Full-Cycle Business Analysis & Design',
-        'Agile Delivery & PI Planning Leadership',
-        'GAP Analysis & Requirement Traceability',
-        'System Integration & UAT Management',
-      ],
-    },
-    {
-      icon: Target,
-      label: 'Department of Transportation',
-      color: '#2F4F3E',
-      headline: 'To modernise their systems',
-      body: 'Helping transportation departments leverage modern technology to improve efficiency, safety, and infrastructure management.',
-      bullets: [
-        'Infrastructure tech advisory',
-        'Modernized traffic management',
-        'Data-informed logistics',
-        'To modernise their systems',
-      ],
-    },
-    {
       icon: Database,
       label: 'Data Modernization',
-      color: '#A9C25D',
+      color: '#2F4F3E',
       headline: 'Strategic Data Transformation',
       body: 'As a strategic delivery partner for the Department of Health, we spearhead the transition of Enterprise Data Warehousing to Azure cloud, enabling real-time intelligence for public health decision-makers.',
       bullets: [
@@ -112,9 +86,6 @@ export function CoreCapabilities() {
         'Immunization & Vital Records Support',
       ],
     },
-  ];
-
-  const capabilitiesRow2: CapabilityDetail[] = [
     {
       icon: Users,
       label: 'Delivery Leadership',
@@ -182,8 +153,6 @@ export function CoreCapabilities() {
     },
   ];
 
-  const allCapabilities = [...capabilitiesRow1, ...capabilitiesRow2];
-
   return (
     <section id="services" className="py-24 bg-[#F8FAF9] relative overflow-visible">
       {/* Background Decor */}
@@ -213,9 +182,9 @@ export function CoreCapabilities() {
           </p>
         </motion.div>
 
-        {/* Row 1 */}
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16 relative mb-20">
-          {capabilitiesRow1.map((capability, index) => {
+        {/* Capabilities Grid */}
+        <div className="flex flex-wrap justify-center items-center gap-x-8 lg:gap-x-16 gap-y-12 relative">
+          {capabilities.map((capability, index) => {
             const globalIndex = index;
             return (
               <div
@@ -258,97 +227,6 @@ export function CoreCapabilities() {
                       {/* Transparent bridge to prevent hover glitch */}
                       <div className="absolute top-0 left-0 w-full h-4"></div>
                       
-                      <div className="absolute inset-0 bg-[#2F4F3E]/10 blur-3xl rounded-3xl -z-10 translate-y-6"></div>
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[6px] w-4 h-4 bg-[#F2F6EF] rotate-45 z-0 border-t border-l border-[#2F4F3E]/5"></div>
-                      <div className="bg-[#F2F6EF] text-[#2F4F3E] rounded-xl overflow-hidden border border-[#2F4F3E]/10 shadow-2xl relative z-10 mt-0">
-                        <div className="h-1.5 w-full" style={{ backgroundColor: capability.color }}></div>
-                        <div className="p-5 md:p-6">
-                          <div className="flex items-center gap-3.5 mb-4">
-                            <div className="p-2.5 rounded-lg flex-shrink-0" style={{ backgroundColor: `${capability.color}15` }}>
-                              <capability.icon className="w-5 h-5" style={{ color: capability.color }} />
-                            </div>
-                            <h3 className="text-base md:text-lg font-bold leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-                              {capability.label}
-                            </h3>
-                          </div>
-                          <div className="space-y-4">
-                            <div>
-                              <h4 className="text-[10px] font-bold uppercase tracking-[0.1em] mb-1.5" style={{ color: capability.color }}>Impact</h4>
-                              <p className="text-[15px] font-semibold text-[#2F4F3E] leading-snug">{capability.headline}</p>
-                            </div>
-                            <p className="text-[13.5px] text-[#2F4F3E]/80 leading-relaxed font-normal">{capability.body}</p>
-                            <div className="pt-1">
-                              <h4 className="text-[10px] font-bold uppercase tracking-[0.1em] mb-3 flex items-center gap-3" style={{ color: capability.color }}>
-                                What we do
-                                <div className="flex-1 h-[1px] bg-[#2F4F3E]/10"></div>
-                              </h4>
-                              <ul className="space-y-2.5">
-                                {capability.bullets.map((bullet, i) => (
-                                  <li key={i} className="flex items-start gap-3.5 group/item">
-                                    <div className="mt-1 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center transition-all duration-300" style={{ backgroundColor: `${capability.color}15` }}>
-                                      <Check className="w-2.5 h-2.5" style={{ color: capability.color }} />
-                                    </div>
-                                    <span className="text-[13px] text-[#2F4F3E]/90 leading-snug font-medium">{bullet}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Row 2 */}
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 relative">
-          {capabilitiesRow2.map((capability, index) => {
-            const globalIndex = capabilitiesRow1.length + index;
-            return (
-              <div
-                key={capability.label}
-                ref={(el) => { cardRefs.current[globalIndex] = el; }}
-                className="relative flex flex-col items-center group"
-                onMouseEnter={() => setHoveredIndex(globalIndex)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="flex flex-col items-center gap-4 cursor-pointer"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <div
-                    className="p-6 rounded-2xl shadow-lg group-hover:shadow-2xl transition-all duration-300"
-                    style={{
-                      background: `linear-gradient(135deg, ${capability.color} 0%, ${capability.color}dd 100%)`,
-                    }}
-                  >
-                    <capability.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <span className="text-sm text-[#2F4F3E] font-semibold text-center max-w-[140px] min-h-[40px] flex items-center justify-center">
-                    {capability.label}
-                  </span>
-                </motion.div>
-
-                <AnimatePresence>
-                  {hoveredIndex === globalIndex && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                      transition={{ type: 'spring', damping: 22, stiffness: 300, duration: 0.2 }}
-                      className="absolute top-full pt-4 left-1/2 -translate-x-1/2 z-[100] w-[290px] md:w-[330px] pointer-events-auto"
-                    >
-                      {/* Transparent bridge to prevent hover glitch */}
-                      <div className="absolute top-0 left-0 w-full h-4"></div>
-
                       <div className="absolute inset-0 bg-[#2F4F3E]/10 blur-3xl rounded-3xl -z-10 translate-y-6"></div>
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[6px] w-4 h-4 bg-[#F2F6EF] rotate-45 z-0 border-t border-l border-[#2F4F3E]/5"></div>
                       <div className="bg-[#F2F6EF] text-[#2F4F3E] rounded-xl overflow-hidden border border-[#2F4F3E]/10 shadow-2xl relative z-10 mt-0">
