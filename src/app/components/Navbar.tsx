@@ -1,4 +1,3 @@
-import image_fee02a20f475a57f3395245eb8d7cea175c88a65 from "../../assets/fee02a20f475a57f3395245eb8d7cea175c88a65.png";
 import image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4 from "../../assets/d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4.png";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useState, useEffect } from "react";
@@ -88,7 +87,7 @@ export function Navbar() {
               >
                 <button onClick={() => handleLinkClick("/")}>
                   <img
-                    src={image_fee02a20f475a57f3395245eb8d7cea175c88a65}
+                    src={image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4}
                     alt="Innovative Care Catalysts"
                     className="h-[80px]"
                   />
