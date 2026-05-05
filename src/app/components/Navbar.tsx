@@ -55,7 +55,7 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${isScrolled ? "w-full max-w-sm" : "w-full max-w-7xl"
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${isScrolled ? "w-full max-w-lg" : "w-full max-w-7xl"
           }`}
       >
         <motion.div
@@ -78,25 +78,25 @@ export function Navbar() {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="border border-[#2F4F3E]/10 relative"
         >
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between relative min-h-[64px]">
             {!isScrolled && (
               <motion.div
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
-                className="flex items-center flex-shrink-0"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10"
               >
                 <button onClick={() => handleLinkClick("/")}>
                   <img
                     src={image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4}
                     alt="Innovative Care Catalysts"
-                    className="h-[120px]"
+                    className="h-[120px] w-auto drop-shadow-sm"
                   />
                 </button>
               </motion.div>
             )}
 
-            <div className={`hidden md:flex items-center ${isScrolled ? "mx-auto" : "gap-8"}`}>
+            <div className={`hidden md:flex items-center ${isScrolled ? "mx-auto" : "gap-8 ml-auto"}`}>
               {isScrolled ? (
                 <div className="flex items-center gap-3">
                   {navLinks.map((link, index) => (
@@ -161,7 +161,7 @@ export function Navbar() {
             </div>
 
             <button
-              className="md:hidden text-[#2F4F3E] p-2"
+              className="md:hidden text-[#2F4F3E] ml-auto p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
