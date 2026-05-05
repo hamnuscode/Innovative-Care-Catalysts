@@ -6,7 +6,7 @@ const statesData = [
     abbr: 'PA',
     name: 'Pennsylvania',
     clients: [
-      { name: 'MDS Consulting', detail: 'Tailored business diagnostics, leadership alignment, and actionable execution roadmaps.' },
+      { name: 'MDS Consulting', detail: 'MDS consulting for short and long term nursing care facilities.' },
       { name: 'Department of Health & Human Services', detail: 'Full-cycle analysis, PI planning, and RTM management for high-stakes systems.' },
       { name: 'Department of Transportation', detail: 'Infrastructure tech advisory, traffic management systems, and data-informed logistics.' },
       { name: 'Department of Health', detail: 'Strategic consulting and system modernization for public health initiatives.' },
@@ -16,6 +16,7 @@ const statesData = [
     abbr: 'CA',
     name: 'California',
     clients: [
+      { name: 'MDS Consulting', detail: 'MDS consulting for short and long term nursing care facilities.' },
       { name: 'Yum! Brands', detail: 'Strategic digital initiatives and enterprise-level system optimization.' },
       { name: 'Hyundai Capital', detail: 'Financial technology modernization and operational efficiency strategies.' },
       { name: 'Amgen Inc.', detail: 'High-impact technology consulting for global biopharmaceutical operations.' },

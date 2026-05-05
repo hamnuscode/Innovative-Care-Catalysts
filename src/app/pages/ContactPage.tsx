@@ -94,7 +94,7 @@ export function ContactPage() {
             <div className="space-y-5 max-w-sm">
               {[
                 { icon: Mail, label: 'Email', value: 'info@innovativecarecatalysts.com', href: 'mailto:info@innovativecarecatalysts.com' },
-                { icon: Phone, label: 'Phone', value: '(123) 456-7890', href: 'tel:+1234567890' },
+                { icon: Phone, label: 'Phone', value: '949-337-3793', href: 'tel:+19493373793' },
               ].map((item, i) => (
                 <motion.div
                   key={item.label}

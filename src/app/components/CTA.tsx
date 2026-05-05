@@ -200,11 +200,11 @@ export function Footer() {
                 <span>info@innovativecarecatalysts.com</span>
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+19493373793"
                 className="flex items-center gap-2 text-[#2F4F3E]/70 hover:text-[#A9C25D] transition-colors duration-300 text-sm"
               >
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>(123) 456-7890</span>
+                <span>949-337-3793</span>
               </a>
             </div>
             <div className="flex gap-3">
