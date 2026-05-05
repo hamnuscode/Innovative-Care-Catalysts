@@ -191,6 +191,7 @@ export function CoreCapabilities() {
                 key={capability.label}
                 ref={(el) => { cardRefs.current[globalIndex] = el; }}
                 className="relative flex flex-col items-center group"
+                style={{ zIndex: hoveredIndex === globalIndex ? 50 : 1 }}
                 onMouseEnter={() => setHoveredIndex(globalIndex)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
@@ -224,7 +225,7 @@ export function CoreCapabilities() {
                       transition={{ type: 'spring', damping: 22, stiffness: 300, duration: 0.2 }}
                       className="absolute top-full pt-4 left-1/2 -translate-x-1/2 z-[100] w-[290px] md:w-[330px] pointer-events-auto"
                     >
-                      <div className="absolute top-0 left-0 w-full h-4"></div>
+                      <div className="absolute top-0 left-0 w-full h-6 -translate-y-full"></div>
                       <div className="absolute inset-0 bg-[#2F4F3E]/10 blur-3xl rounded-3xl -z-10 translate-y-6"></div>
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[6px] w-4 h-4 bg-[#F2F6EF] rotate-45 z-0 border-t border-l border-[#2F4F3E]/5"></div>
                       <div className="bg-[#F2F6EF] text-[#2F4F3E] rounded-xl overflow-hidden border border-[#2F4F3E]/10 shadow-2xl relative z-10 mt-0">
@@ -280,6 +281,7 @@ export function CoreCapabilities() {
                 key={capability.label}
                 ref={(el) => { cardRefs.current[globalIndex] = el; }}
                 className="relative flex flex-col items-center group"
+                style={{ zIndex: hoveredIndex === globalIndex ? 50 : 1 }}
                 onMouseEnter={() => setHoveredIndex(globalIndex)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
@@ -313,7 +315,7 @@ export function CoreCapabilities() {
                       transition={{ type: 'spring', damping: 22, stiffness: 300, duration: 0.2 }}
                       className="absolute top-full pt-4 left-1/2 -translate-x-1/2 z-[100] w-[290px] md:w-[330px] pointer-events-auto"
                     >
-                      <div className="absolute top-0 left-0 w-full h-4"></div>
+                      <div className="absolute top-0 left-0 w-full h-6 -translate-y-full"></div>
                       <div className="absolute inset-0 bg-[#2F4F3E]/10 blur-3xl rounded-3xl -z-10 translate-y-6"></div>
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[6px] w-4 h-4 bg-[#F2F6EF] rotate-45 z-0 border-t border-l border-[#2F4F3E]/5"></div>
                       <div className="bg-[#F2F6EF] text-[#2F4F3E] rounded-xl overflow-hidden border border-[#2F4F3E]/10 shadow-2xl relative z-10 mt-0">
