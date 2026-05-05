@@ -78,9 +78,12 @@ export function Footer() {
 
   const services = [
     'MDS Consulting',
+    'Data Modernization',
     'Delivery Leadership',
     'Business Strategy',
     'Agile & Product Evolution',
+    'Technology Advisory',
+    'Data Solutions',
   ];
 
   const handleServiceClick = (index: number) => {

@@ -55,7 +55,7 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${isScrolled ? "w-full max-w-lg" : "w-full max-w-7xl"
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ${isScrolled ? "w-full max-w-md" : "w-full max-w-7xl"
           }`}
       >
         <motion.div

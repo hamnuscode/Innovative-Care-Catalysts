@@ -8,7 +8,7 @@ const statesData = [
     clients: [
       { name: 'MDS Consulting', detail: 'Tailored business diagnostics, leadership alignment, and actionable execution roadmaps.' },
       { name: 'Department of Health & Human Services', detail: 'Full-cycle analysis, PI planning, and RTM management for high-stakes systems.' },
-      { name: 'Department of Transport', detail: 'Infrastructure tech advisory, traffic management systems, and data-informed logistics.' },
+      { name: 'Department of Transportation', detail: 'Infrastructure tech advisory, traffic management systems, and data-informed logistics.' },
       { name: 'Department of Health', detail: 'Strategic consulting and system modernization for public health initiatives.' },
     ]
   },
@@ -41,7 +41,7 @@ export const StateFootprint = () => {
         >
           <span className="text-[#A9C25D] font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Regional Presence</span>
           <h2 className="text-3xl md:text-4xl text-[#2F4F3E]" style={{ fontFamily: 'var(--font-heading)' }}>
-            States We Have Worked In
+            Clients Served
           </h2>
           <div className="w-16 h-1 bg-[#A9C25D] mx-auto mt-4 rounded-full"></div>
         </motion.div>
