@@ -69,8 +69,8 @@ export function Navbar() {
             borderRadius: isScrolled ? "9999px" : "16px",
             paddingLeft: isScrolled ? "16px" : "24px",
             paddingRight: isScrolled ? "16px" : "24px",
-            paddingTop: isScrolled ? "8px" : "10px",
-            paddingBottom: isScrolled ? "8px" : "10px",
+            paddingTop: isScrolled ? "4px" : "10px",
+            paddingBottom: isScrolled ? "4px" : "10px",
             boxShadow: isScrolled
               ? "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               : "0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.03)",
@@ -78,7 +78,7 @@ export function Navbar() {
           transition={{ duration: 0.5, ease: "easeInOut" }}
           className="border border-[#2F4F3E]/10 relative"
         >
-          <div className="flex items-center justify-between relative min-h-[64px]">
+          <div className={`flex items-center justify-between relative transition-all duration-500 ${isScrolled ? "min-h-[48px]" : "min-h-[64px]"}`}>
             {!isScrolled && (
               <motion.div
                 initial={{ opacity: 1 }}
