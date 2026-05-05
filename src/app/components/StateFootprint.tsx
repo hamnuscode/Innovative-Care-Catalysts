@@ -5,7 +5,6 @@ const statesData = [
   {
     abbr: 'PA',
     name: 'Pennsylvania',
-    subtitle: 'Primary Footprint',
     clients: [
       { name: 'MDS Consulting', detail: 'Tailored business diagnostics, leadership alignment, and actionable execution roadmaps.' },
       { name: 'DHS ERP Modernization', detail: 'Full-cycle analysis, PI planning, and RTM management for high-stakes systems.' },
@@ -15,7 +14,6 @@ const statesData = [
   {
     abbr: 'CA',
     name: 'California',
-    subtitle: 'Regional Partner',
     clients: [
       { name: 'Yum! Brands', detail: 'Strategic digital initiatives and enterprise-level system optimization.' },
       { name: 'Hyundai Capital', detail: 'Financial technology modernization and operational efficiency strategies.' },
@@ -69,7 +67,6 @@ export const StateFootprint = () => {
                 }`}>{state.abbr}</span>
               </div>
               <div className="text-left">
-                <span className="block text-[10px] font-bold text-[#A9C25D] uppercase tracking-widest mb-0.5">{state.subtitle}</span>
                 <span className="font-bold text-[#2F4F3E] text-2xl">{state.name}</span>
               </div>
             </motion.div>
@@ -97,9 +94,6 @@ export const StateFootprint = () => {
                         <h3 className="text-2xl md:text-3xl font-bold text-[#2F4F3E]" style={{ fontFamily: 'var(--font-heading)' }}>
                           {activeData.name} Impact
                         </h3>
-                      </div>
-                      <div className="bg-[#F8FAF9] px-6 py-3 rounded-xl border border-[#2F4F3E]/5">
-                        <span className="text-[#2F4F3E]/60 text-sm font-medium italic">"{activeData.subtitle}"</span>
                       </div>
                     </div>
 
