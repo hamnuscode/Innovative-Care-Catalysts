@@ -183,7 +183,7 @@ export function CoreCapabilities() {
         </motion.div>
 
         {/* Capabilities Grid */}
-        <div className="flex flex-wrap justify-center items-center gap-x-8 lg:gap-x-16 gap-y-12 relative">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 lg:gap-x-12 gap-y-16 relative">
           {capabilities.map((capability, index) => {
             const globalIndex = index;
             return (
