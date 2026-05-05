@@ -89,7 +89,7 @@ export function Navbar() {
                   <img
                     src={image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4}
                     alt="Innovative Care Catalysts"
-                    className="h-[80px]"
+                    className="h-[160px]"
                   />
                 </button>
               </motion.div>

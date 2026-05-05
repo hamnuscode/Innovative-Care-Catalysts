@@ -121,7 +121,7 @@ export function Footer() {
               <img
                 src={image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4}
                 alt="Innovative Care Catalysts"
-                className="h-[60px] w-auto mb-2"
+                className="h-[120px] w-auto mb-2"
               />
             </button>
             <p className="text-[#2F4F3E]/70 text-sm text-center md:text-left">
