@@ -54,8 +54,9 @@ export function ContactPage() {
       });
 
       clearTimeout(timeout);
+      const result = await response.json();
 
-      if (response.ok) {
+      if (response.ok && result.success) {
         setFormStatus('sent');
         setShowToast(true);
         formRef.current?.reset();
