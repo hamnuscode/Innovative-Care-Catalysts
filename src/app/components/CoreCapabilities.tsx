@@ -87,9 +87,22 @@ export function CoreCapabilities() {
       ],
     },
     {
+      icon: Workflow,
+      label: 'Agile Coaching',
+      color: '#A9C25D',
+      headline: 'Agile Coaching That Delivers Real Business Outcomes',
+      body: 'We help teams move from slow, reactive development to structured, high-impact product delivery. Less chaos, more clarity on what to build next and why.',
+      bullets: [
+        'Transformation and coaching',
+        'Product roadmap planning',
+        'Sprint and delivery optimization',
+        'Continuous improvement systems',
+      ],
+    },
+    {
       icon: Users,
       label: 'Delivery Leadership',
-      color: '#A9C25D',
+      color: '#2F4F3E',
       headline: 'Turn plans into outcomes',
       body: 'Ideas are easy. Execution is where most teams struggle. We bring structure, accountability, and momentum so projects don\'t stall or drift. Your teams move faster with fewer blockers.',
       bullets: [
@@ -102,7 +115,7 @@ export function CoreCapabilities() {
     {
       icon: Target,
       label: 'Business Strategy',
-      color: '#2F4F3E',
+      color: '#A9C25D',
       headline: 'Direction you can act on',
       body: 'We help you define where to play and how to win. From positioning to revenue strategy, everything is grounded in real market conditions, not theory.',
       bullets: [
@@ -110,19 +123,6 @@ export function CoreCapabilities() {
         'ICP and positioning clarity',
         'Pricing and revenue strategy',
         'Go-to-market planning',
-      ],
-    },
-    {
-      icon: Workflow,
-      label: 'Agile Coaching',
-      color: '#A9C25D',
-      headline: 'Agile Coaching That Delivers Real Business Outcomes',
-      body: 'We help teams move from slow, reactive development to structured, high-impact product delivery. Less chaos, more clarity on what to build next and why.',
-      bullets: [
-        'Transformation and coaching',
-        'Product roadmap planning',
-        'Sprint and delivery optimization',
-        'Continuous improvement systems',
       ],
     },
     {
