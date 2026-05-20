@@ -3,10 +3,12 @@ import { Mail, Phone, Send, ChevronDown, CheckCircle2 } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
 export function ContactPage() {
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [selectedService, setSelectedService] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const services = [
     "MDS Consulting",
@@ -48,7 +50,14 @@ export function ContactPage() {
       });
 
       if (response.ok) {
-        setFormStatus('success');
+        setFormStatus('sent');
+        setShowToast(true);
+        formRef.current?.reset();
+        setSelectedService('');
+        setTimeout(() => {
+          setFormStatus('idle');
+          setShowToast(false);
+        }, 4000);
       } else {
         setFormStatus('error');
       }
@@ -56,19 +65,6 @@ export function ContactPage() {
       setFormStatus('error');
     }
   };
-
-  if (formStatus === 'success') {
-    return (
-      <div className="flex-grow flex items-start justify-center pt-48 pb-20 px-6 bg-white">
-        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="max-w-md w-full bg-[#F8FAF9] p-12 rounded-[3.5rem] text-center border border-[#2F4F3E]/5 shadow-2xl">
-          <CheckCircle2 className="w-16 h-16 text-[#A9C25D] mx-auto mb-6" />
-          <h2 className="text-3xl text-[#2F4F3E] mb-4 font-heading">Successfully Sent</h2>
-          <p className="text-[#2F4F3E]/60 mb-8 leading-relaxed">Thank you for reaching out. Our leadership team will review your inquiry and respond within 24 hours.</p>
-          <button onClick={() => window.location.href = '/'} className="w-full bg-[#2F4F3E] text-white py-4 rounded-full transition-all text-lg hover:bg-[#3d6350] shadow-lg">Return To Home</button>
-        </motion.div>
-      </div>
-    );
-  }
 
   return (
     <div className="flex-grow flex items-start justify-center pt-56 pb-32 px-6 bg-white overflow-hidden relative">
@@ -136,7 +132,7 @@ export function ContactPage() {
               />
 
               <div className="relative bg-white rounded-[2.5rem] p-8 lg:p-10 shadow-2xl z-20">
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-1.5">
                       <label className="text-[10px] font-bold text-[#2F4F3E] uppercase tracking-widest ml-1">Full Name</label>
@@ -195,13 +191,28 @@ export function ContactPage() {
 
                   <button
                     type="submit"
-                    disabled={formStatus === 'sending' || !selectedService}
-                    className="w-full bg-[#2F4F3E] text-white py-4 rounded-xl transition-all text-lg font-medium shadow-xl flex items-center justify-center hover:bg-[#3d6350] hover:scale-[1.01] active:scale-[0.99] disabled:opacity-30 disabled:cursor-not-allowed group overflow-hidden relative"
+                    disabled={formStatus === 'sending' || formStatus === 'sent' || !selectedService}
+                    className="w-full bg-[#2F4F3E] text-white py-4 rounded-xl transition-all text-lg font-medium shadow-xl flex items-center justify-center hover:bg-[#3d6350] hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed group overflow-hidden relative"
                   >
-                    <span className="relative z-10">
-                      {formStatus === 'sending' ? "Sending..." : "Initialize Consultation"}
-                    </span>
-                    {/* Hover Glow */}
+                    <AnimatePresence mode="wait">
+                      {formStatus === 'sending' && (
+                        <motion.span key="sending" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="relative z-10 flex items-center gap-2">
+                          <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
+                          Sending...
+                        </motion.span>
+                      )}
+                      {formStatus === 'sent' && (
+                        <motion.span key="sent" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="relative z-10 flex items-center gap-2">
+                          <CheckCircle2 className="w-5 h-5 text-[#A9C25D]" />
+                          Sent
+                        </motion.span>
+                      )}
+                      {(formStatus === 'idle' || formStatus === 'error') && (
+                        <motion.span key="idle" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} className="relative z-10">
+                          Initialize Consultation
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
                     <div className="absolute inset-0 bg-[#A9C25D] opacity-0 group-hover:opacity-10 transition-opacity" />
                   </button>
                 </form>
@@ -210,6 +221,25 @@ export function ContactPage() {
           </motion.div>
         </div>
       </div>
+
+      {/* Toast */}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 24, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 24, scale: 0.95 }}
+            transition={{ type: 'spring', damping: 20, stiffness: 280 }}
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 bg-[#2F4F3E] text-white px-6 py-4 rounded-2xl shadow-2xl"
+          >
+            <CheckCircle2 className="w-5 h-5 text-[#A9C25D] flex-shrink-0" />
+            <div>
+              <p className="font-semibold text-sm">Consultation request sent!</p>
+              <p className="text-white/60 text-xs mt-0.5">We'll be in touch within 24 hours.</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
