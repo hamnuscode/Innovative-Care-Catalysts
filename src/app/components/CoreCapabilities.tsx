@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'motion/react';
-import { Stethoscope, Users, Target, Workflow, Database, Lightbulb, Check, ArrowRight } from 'lucide-react';
+import { Stethoscope, Users, Target, Workflow, Database, Lightbulb, Briefcase, Check, ArrowRight } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import { useLocation } from 'react-router';
 
@@ -114,12 +114,12 @@ export function CoreCapabilities() {
     },
     {
       icon: Workflow,
-      label: 'Agile & Product Evolution',
+      label: 'Agile Coaching',
       color: '#A9C25D',
-      headline: 'Build better, faster',
+      headline: 'Agile Coaching That Delivers Real Business Outcomes',
       body: 'We help teams move from slow, reactive development to structured, high-impact product delivery. Less chaos, more clarity on what to build next and why.',
       bullets: [
-        'Agile transformation and coaching',
+        'Transformation and coaching',
         'Product roadmap planning',
         'Sprint and delivery optimization',
         'Continuous improvement systems',
@@ -149,6 +149,19 @@ export function CoreCapabilities() {
         'Dashboard and reporting systems',
         'Performance analysis',
         'Data-driven decision frameworks',
+      ],
+    },
+    {
+      icon: Briefcase,
+      label: 'Project & Program Management',
+      color: '#2F4F3E',
+      headline: 'Align programs, deliver at scale',
+      body: 'We manage multiple related projects strategically to achieve broader business goals. From capital programs to healthcare expansions, we provide the structure and oversight to keep complex, multi-workstream initiatives aligned and on track.',
+      bullets: [
+        'Capital programs & portfolio oversight',
+        'Workplace transformation & real estate portfolios',
+        'Healthcare expansions & system modernization',
+        'Operational readiness initiatives',
       ],
     },
   ];
@@ -182,9 +195,9 @@ export function CoreCapabilities() {
           </p>
         </motion.div>
 
-        {/* Row 1 (3 items) */}
+        {/* Row 1 (4 items) */}
         <div className="flex flex-wrap justify-center gap-x-12 lg:gap-x-20 gap-y-12 mb-12 relative">
-          {capabilities.slice(0, 3).map((capability, index) => {
+          {capabilities.slice(0, 4).map((capability, index) => {
             const globalIndex = index;
             return (
               <div
@@ -274,8 +287,8 @@ export function CoreCapabilities() {
 
         {/* Row 2 (4 items) */}
         <div className="flex flex-wrap justify-center gap-x-8 lg:gap-x-12 gap-y-12 relative">
-          {capabilities.slice(3, 7).map((capability, index) => {
-            const globalIndex = index + 3;
+          {capabilities.slice(4, 8).map((capability, index) => {
+            const globalIndex = index + 4;
             return (
               <div
                 key={capability.label}
