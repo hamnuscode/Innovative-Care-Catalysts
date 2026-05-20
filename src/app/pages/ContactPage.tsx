@@ -41,15 +41,15 @@ export function ContactPage() {
     const timeout = setTimeout(() => controller.abort(), 10000);
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/hamnan03@gmail.com', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         signal: controller.signal,
         body: JSON.stringify({
-          _subject: `New Lead: ${data.name}`,
+          access_key: '63ec29d5-0468-4d1f-9f68-963d917ce1b6',
+          subject: `New Lead: ${data.name}`,
           ...data,
           interest: selectedService,
-          _template: 'table'
         })
       });
 
