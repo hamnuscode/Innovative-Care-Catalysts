@@ -37,10 +37,14 @@ export function ContactPage() {
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
     try {
       const response = await fetch('https://formsubmit.co/ajax/hamnan03@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        signal: controller.signal,
         body: JSON.stringify({
           _subject: `New Lead: ${data.name}`,
           ...data,
@@ -48,6 +52,8 @@ export function ContactPage() {
           _template: 'table'
         })
       });
+
+      clearTimeout(timeout);
 
       if (response.ok) {
         setFormStatus('sent');
@@ -59,10 +65,11 @@ export function ContactPage() {
           setShowToast(false);
         }, 4000);
       } else {
-        setFormStatus('error');
+        setFormStatus('idle');
       }
     } catch (err) {
-      setFormStatus('error');
+      clearTimeout(timeout);
+      setFormStatus('idle');
     }
   };
 
