@@ -1,6 +1,6 @@
 import image_d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4 from '../../assets/d80d5c2312b94c5160074dc8a2f4bfc23b1be6b4.png'
 import { motion } from 'motion/react';
-import { ArrowRight, Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { ArrowRight, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
 import { Link, useNavigate } from 'react-router';
 
 export function CTASection() {
@@ -192,13 +192,6 @@ export function Footer() {
               Contact
             </h4>
             <div className="space-y-2 mb-4">
-              <a
-                href="mailto:info@innovativecarecatalysts.com"
-                className="flex items-center gap-2 text-[#2F4F3E]/70 hover:text-[#A9C25D] transition-colors duration-300 text-sm"
-              >
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>info@innovativecarecatalysts.com</span>
-              </a>
               <a
                 href="tel:+19493373793"
                 className="flex items-center gap-2 text-[#2F4F3E]/70 hover:text-[#A9C25D] transition-colors duration-300 text-sm"
