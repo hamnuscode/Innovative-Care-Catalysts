@@ -64,7 +64,7 @@ export function CoreCapabilities() {
       icon: Stethoscope,
       label: 'MDS Consulting',
       color: '#A9C25D',
-      headline: 'Clear roadmap to financial success',
+      headline: 'Solve the right problems first',
       body: 'We provide expert MDS consulting to help skilled nursing facilities navigate regulatory requirements, maximize reimbursement, and achieve five-star quality ratings. From quality assurance to payment model compliance, we position your facility for sustainable success.',
       bullets: [
         'Clear roadmap to financial success',
